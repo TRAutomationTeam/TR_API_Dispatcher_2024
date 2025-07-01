@@ -190,7 +190,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="CreateBinder&gt;UploadBinder&gt;SubmitBinder" sap:VirtualizedContainerService.HintSize="1080.8000000000002,2813.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CreateBinder&gt;UploadBinder&gt;SubmitBinder" sap:VirtualizedContainerService.HintSize="1112,2989.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="req_URL" />
       <Variable x:TypeArguments="x:String" Name="CB_Req_URL" />
@@ -330,9 +330,9 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BuildDataTable>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="620.8,2597.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="620.8,2773.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <TryCatch.Try>
-        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="In this for each bot assign data taken from excel to variables. Then use it in VB.Net code to create bulk binders." DataTable="[in_dtAPISubmissionData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="584,2343.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="In this for each bot assign data taken from excel to variables. Then use it in VB.Net code to create bulk binders." DataTable="[in_dtAPISubmissionData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="584,2519.2" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
@@ -343,10 +343,11 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="550.4,2133.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="550.4,2309.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="516.8,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
@@ -471,7 +472,7 @@
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
                 <ui:CopyFile ContinueOnError="{x:Null}" Destination="[in_Config(&quot;TestSummary_ReportPath&quot;).ToString+&quot;_&quot;+out_TransactionItem(&quot;Unique_Identifier&quot;).ToString+&quot;.xlsx&quot;]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="516.8,187.2" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[in_Config(&quot;TestSummary_TemplatePath&quot;).ToString]" />
-                <If Condition="[IsNothing(out_TransactionItem)=True]" DisplayName="If (Transaction_Item_null?)" sap:VirtualizedContainerService.HintSize="516.8,1316" sap2010:WorkflowViewState.IdRef="If_19">
+                <If Condition="[IsNothing(out_TransactionItem)=True]" DisplayName="If (Transaction_Item_null?)" sap:VirtualizedContainerService.HintSize="516.8,1492" sap2010:WorkflowViewState.IdRef="If_19">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -496,7 +497,7 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="483.2,920" sap2010:WorkflowViewState.IdRef="Sequence_133">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="483.2,1096" sap2010:WorkflowViewState.IdRef="Sequence_133">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -3842,7 +3843,7 @@ Select t=Tuple.Create(name, out_TransactionItem(i))).ToDictionary(Function (x) x
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                       <ui:RenameFileX DisplayName="Rename File" FilePath="[in_Config(&quot;TestSummary_ReportPath&quot;).ToString+&quot;_&quot;+out_TransactionItem(&quot;Unique_Identifier&quot;).ToString+&quot;.xlsx&quot;]" sap:VirtualizedContainerService.HintSize="449.6,176" sap2010:WorkflowViewState.IdRef="RenameFileX_1" KeepExtension="True" NewName="[in_Config(&quot;TestSummary_ReportPath&quot;).ToString.Split(&quot;.xlsx&quot;)(0)+&quot;_&quot;+BinderID.ToString.Trim+&quot;.xlsx&quot;]" />
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TestSummary_ReportUpdate - Invoke Workflow File (Reporting\TestSummary_ReportUpdate.xaml)" sap:VirtualizedContainerService.HintSize="449.6,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_47" UnSafe="False" WorkflowFileName="Reporting\TestSummary_ReportUpdate.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TestSummary_ReportUpdate - Invoke Workflow File (Reporting\TestSummary_ReportUpdate.xaml)" sap:VirtualizedContainerService.HintSize="449.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_47" UnSafe="False" WorkflowFileName="Reporting\TestSummary_ReportUpdate.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                           <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">[out_TransactionItem]</InArgument>
@@ -3851,6 +3852,13 @@ Select t=Tuple.Create(name, out_TransactionItem(i))).ToDictionary(Function (x) x
                           <InArgument x:TypeArguments="x:String" x:Key="in_BinderID">[BinderID.ToString]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_strSubmissionType">[str_JobDetails_SubmissionType]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_TransactionStatus">[strBinder1stSubStatus]</InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TestSummary_DataService_CRUD - Invoke Workflow File (Reporting\TestSummary_DataService_CRUD.xaml)" sap:VirtualizedContainerService.HintSize="449.6,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_52" UnSafe="False" WorkflowFileName="Reporting\TestSummary_DataService_CRUD.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                          <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">[out_TransactionItem]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_TestReportExcel">[in_Config("TestSummary_ReportPath").ToString.Split(".xlsx")(0)+"_"+BinderID.ToString+".xlsx"]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                     </Sequence>
@@ -3888,14 +3896,40 @@ Select t=Tuple.Create(name, out_TransactionItem(i))).ToDictionary(Function (x) x
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TestSummary_Output - Invoke Workflow File (Reporting\TestSummary_Output.xaml)" sap:VirtualizedContainerService.HintSize="336.8,144" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_46" UnSafe="False" WorkflowFileName="Reporting\TestSummary_Output.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="sd:DataTable" x:Key="dt_TestSummaryReport">[DictTestSummaryReport("API 1st Submission")]</InArgument>
-                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_Component">API 1st Submission</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_SPClientID">[BinderID.ToString]</InArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
+            <Sequence sap:VirtualizedContainerService.HintSize="416,620.8" sap2010:WorkflowViewState.IdRef="Sequence_170">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TestSummary_ReportUpdate - Invoke Workflow File (Reporting\TestSummary_ReportUpdate.xaml)" sap:VirtualizedContainerService.HintSize="382.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_53" UnSafe="False" WorkflowFileName="Reporting\TestSummary_ReportUpdate.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                  <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">[out_TransactionItem]</InArgument>
+                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_ReporterEntry">[dt_ReporterDataUpdated]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_LogExecStartTime">[dt_StartTime.ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_BinderID">[BinderID.ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strSubmissionType">[str_JobDetails_SubmissionType]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_TransactionStatus">[strBinder1stSubStatus]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TestSummary_DataService_CRUD - Invoke Workflow File (Reporting\TestSummary_DataService_CRUD.xaml)" sap:VirtualizedContainerService.HintSize="382.4,217.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_54" UnSafe="False" WorkflowFileName="Reporting\TestSummary_DataService_CRUD.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                  <InArgument x:TypeArguments="sd:DataRow" x:Key="in_TransactionItem">[out_TransactionItem]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_TestReportExcel">[in_Config("TestSummary_ReportPath").ToString.Split(".xlsx")(0)+"_"+BinderID.ToString+".xlsx"]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_ReportingException" />
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="TestSummary_Output - Invoke Workflow File (Reporting\TestSummary_Output.xaml)" sap:VirtualizedContainerService.HintSize="382.4,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_46" UnSafe="False" WorkflowFileName="Reporting\TestSummary_Output.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="sd:DataTable" x:Key="dt_TestSummaryReport">[DictTestSummaryReport("API 1st Submission")]</InArgument>
+                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_Component">API 1st Submission</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_SPClientID">[BinderID.ToString]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+            </Sequence>
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>

@@ -4,6 +4,8 @@
   "description": "API dispatcher for 1st submission create, upload and submit binder",
   "main": "Main.xaml",
   "dependencies": {
+    "ExceptionClassifier": "[1.0.9]",
+    "UiPath.DataService.Activities": "[25.2.0]",
     "UiPath.Excel.Activities": "[2.24.4]",
     "UiPath.Mail.Activities": "[1.21.1]",
     "UiPath.System.Activities": "[24.10.7]",
@@ -12,7 +14,14 @@
     "UiPath.WebAPI.Activities": "[1.21.1]"
   },
   "webServices": [],
-  "entitiesStores": [],
+  "entitiesStores": [
+    {
+      "serviceDocument": ".entities/EntitiesStore.json",
+      "tenantName": "DefaultTenant",
+      "namespace": "TR_AUT_API_1st_Submission_Dispatcher",
+      "uniqueReference": "/7AsPRIFHOiU/B2BWKXdyRSR0G13aTL09ArdgZPKWUA="
+    }
+  ],
   "schemaVersion": "4.0",
   "studioVersion": "23.10.0.0",
   "projectVersion": "1.0.4",
